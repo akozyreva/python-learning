@@ -59,3 +59,26 @@ def summer_69(arr):
 print(summer_69([1, 3, 5]))
 print(summer_69([4, 5, 6, 7, 8, 9]))
 print(summer_69([2, 1, 6, 9, 11]))
+
+
+# SPY GAME: Write a function that takes in a list of integers and returns
+# True if it contains 007 in order
+# spy_game([1,2,4,0,0,7,5]) --> True
+# spy_game([1,0,2,4,0,5,7]) --> True
+# spy_game([1,7,2,0,4,5,0]) --> False
+print("spy_game")
+def spy_game(nums):
+    # find pos of 7
+    index_7 = nums.index(7)
+    # find the smallest poisition of 0
+    index_01 = nums.index(0)
+    if index_01 > index_7:
+        return False
+    else:
+        for i in nums[index_01 + 1: index_7]:
+            if i == 0:
+                return True
+        return False
+print(spy_game([1,2,4,0,0,7,5]))
+print(spy_game([1,0,2,4,0,5,7]))
+print(spy_game([1,7,2,0,4,5,0]) )
