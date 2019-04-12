@@ -4,9 +4,11 @@
 # lesser_of_two_evens(2,5) --> 5
 def lesser_of_two_evens(a,b):
     if (a % 2) or (b % 2):
-        return a if a < b else b
+        #return a if a < b else b
+        return min(a, b)
     else:
-        return b if b > a else a
+        return max(a, b)
+        #return b if b > a else a
 
 print(lesser_of_two_evens(2,4))
 print(lesser_of_two_evens(2,5))
@@ -30,9 +32,7 @@ print(animal_crackers('Crazy Kangaroo'))
 # makes_twenty(2,3) --> False
 
 def makes_twenty(n1,n2):
-    if (n1 == 20) or (n2 == 20) or ((n1 + n2) == 20):
-        return True
-    return False
+    return (n1 == 20) or (n2 == 20) or ((n1 + n2) == 20):
 
 print(makes_twenty(20,10))
 print(makes_twenty(2,3))
