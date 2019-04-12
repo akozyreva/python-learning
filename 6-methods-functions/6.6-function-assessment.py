@@ -46,6 +46,8 @@ def old_macdonald(name):
     str_list[0] = str_list[0].upper()
     name = "".join(str_list)
     return name
+    # it's another desicion - in one line
+    # return name[:3].capitalize() + name[3:].capitalize()
 print(old_macdonald('macdonald'))
 
 #  MASTER YODA: Given a sentence, return a
@@ -57,6 +59,8 @@ def master_yoda(text):
     text = text.split()[::-1]
     text = " ".join(text)
     return text
+    # I could write it in one line
+    # return ' '.join(text.split()[::-1])
 print(master_yoda('I am home'))
 print(master_yoda('We are ready'))
 
@@ -68,10 +72,8 @@ print(master_yoda('We are ready'))
 #    almost_there(209) --> True
 
 def almost_there(num):
-    if (abs(100 - num) <= 10) or (abs(200 - num) <= 10):
-        return True
-    else:
-        return False
+    return (abs(100 - num) <= 10) or (abs(200 - num) <= 10)
+
 print(almost_there(90))
 print(almost_there(104))
 print(almost_there(150))
@@ -90,6 +92,9 @@ def has_33(nums):
             break
         elif val == 3 and nums[index+1] == 3:
             return True
+        #    another way to do it
+        #    if nums[i:i+2] == [3,3]:
+        #       return True
     return False
 print(has_33([1, 3, 3]))
 print(has_33([1, 3, 1, 3]))
