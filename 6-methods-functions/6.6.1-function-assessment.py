@@ -99,3 +99,14 @@ def count_primes(num):
         count += 1
     print(len(num_list))
 count_primes(100)
+
+#  PRINT BIG: Write a function that takes in
+#  a single letter, and returns a 5x5 representation of that letter
+# HINT: Consider making a dictionary of possible patterns, and mapping
+# the alphabet to specific 5-line combinations of patterns.
+# For purposes of this exercise, it's ok if your dictionary stops at "E".
+def print_big(letter):
+    a = '{:>3} '.format('*') + '\n' + ' {:>1} '.format('*') + ' {:>1} '.format('*') + '\n *****' + '\n *   *'
+    print(a)
+    pass
+print_big('a')
