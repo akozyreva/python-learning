@@ -82,3 +82,20 @@ def spy_game(nums):
 print(spy_game([1,2,4,0,0,7,5]))
 print(spy_game([1,0,2,4,0,5,7]))
 print(spy_game([1,7,2,0,4,5,0]) )
+
+# COUNT PRIMES: Write a function that returns the number of prime
+# numbers that exist up to and including a given number
+# count_primes(100) --> 25
+# By convention, 0 and 1 are not prime.
+# I use algorithm  - Sieve of Eratosthenes
+def count_primes(num):
+    num_list = []
+    for i in range(2, num + 1): num_list.append(i)
+    count = 2
+    for i in num_list:
+        for j in num_list[count: ]:
+            if j % count == 0:
+                num_list.remove(j)
+        count += 1
+    print(len(num_list))
+count_primes(100)
