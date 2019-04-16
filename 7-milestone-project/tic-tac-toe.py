@@ -15,13 +15,24 @@ def print_square():
             print(i, end='')
         print('\n')
 
+def input_move(player):
+    move_line = int(input('Insert line from 1 to 3 '))
+    move_col = int(input('Insert column from 1 to 3 '))
+    move = square[str(move_line)][move_col - 1]
+    return move_line, move_col, move
+
 def insert_move(player):
     global move_count
     print("Player " + player )
-    move_line = int(input('Insert line from 1 to 3 '))
-    move_col = int(input('Insert column from 1 to 3 '))
-    os.system('clear')
+    move_line, move_col, move = input_move(player)
+    # check, that ceil isn't empty
+    while move == 'x|' or move == '0|':
+        print("Ceil is not empty. Choose another one")
+        move_line, move_col, move = input_move(player)
+        os.system('clear')
+        print_square()
     square[str(move_line)][move_col - 1] = player + '|'
+    os.system('clear')
     print_square()
     if move_count >= 5:
         check_winner(player)
