@@ -1,4 +1,3 @@
-import time
 import os
 
 square = {
@@ -8,6 +7,7 @@ square = {
 }
 
 def print_square():
+    os.system('clear')
     print("   1 2 3")
     for key, value in square.items():
         print(key, end=' ')
@@ -29,10 +29,8 @@ def insert_move(player):
     while move == 'x|' or move == '0|':
         print("Ceil is not empty. Choose another one")
         move_line, move_col, move = input_move(player)
-        os.system('clear')
         print_square()
     square[str(move_line)][move_col - 1] = player + '|'
-    os.system('clear')
     print_square()
     if move_count >= 5:
         check_winner(player)
@@ -69,7 +67,7 @@ while game:
         insert_move('x')
     else:
         insert_move('0')
-    if move_count == 8:
+    if move_count == 8 and game != 0:
         print("Dead heat")
         break
     move_count += 1
