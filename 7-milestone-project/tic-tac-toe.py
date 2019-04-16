@@ -16,35 +16,49 @@ def print_square():
         print('\n')
 
 def insert_move(player):
+    global move_count
     print("Player " + player )
     move_line = int(input('Insert line from 1 to 3 '))
     move_col = int(input('Insert column from 1 to 3 '))
     os.system('clear')
     square[str(move_line)][move_col - 1] = player + '|'
     print_square()
+    if move_count >= 5:
+        check_winner(player)
 
 def check_winner(player):
-    for key, value in square.items():
-        print(len(set(value)))
+    # check lines
+    for key, values in square.items():
+        occur_player = values.count(player + '|')
+        # if whole line is occured
+        if occur_player == 3:
+            print_winner(player)
+
+    # check occurence in columns
+    for i in range(3):
+        if square['1'][i] == square['2'][i] == square['3'][i] == player + '|':
+            print_winner(player)
+
+    # check diagonales
+    if (square['1'][0] == square['2'][1] == square['3'][2] == player + '|')\
+    or (square['3'][0] == square['2'][1] == square['1'][2] == player + '|'):
+        print_winner(player)
+
+
+def print_winner(player):
+    global game
+    game = 0
+    print("player "+ player + " won")
 
 game = 1
-move_count = 0
+move_count = 1
+print_square()
 while game:
-    if move_count % 2 == 0:
+    if move_count % 2 != 0:
         insert_move('x')
-        check_winner('x')
     else:
         insert_move('0')
-    move_count += 1
-    if move_count == 5:
+    if move_count == 8:
+        print("Dead heat")
         break
-#os.system('clear')
-
-#for x in range (0,5):
-#    b = "Loading" + "."
-#    print(b)
-#    move_line = int(input('Insert line from 1 to 3 '))
-#    move_col = int(input('Insert column from 1 to 3 '))
-#    b = "Loading" + "."  + str(move_line)
-#    print (b, end="\r")
-#    time.sleep(1)
+    move_count += 1
