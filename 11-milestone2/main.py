@@ -17,7 +17,7 @@ while game:
         newGame.hit("player")
         if newGame.player_score == 21:
             print("You won! Black Jack")
-        if newGame.player_score >= 21:
+        if newGame.player_score > 21:
             print("Sorry, it's over 21, you lost")
             game = 0
         else:
