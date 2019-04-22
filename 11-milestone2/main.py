@@ -3,9 +3,6 @@ from Player import Player
 from Dealer import Dealer
 
 newGame = Game()
-newGame.cards_deck()
+newGame.initialize_game()
 player = Player()
 dealer = Dealer()
-player.new_count()
-print("blablabla")
-dealer.new_count()
