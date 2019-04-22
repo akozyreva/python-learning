@@ -35,11 +35,11 @@ class Cards:
         random_card = self.list_card_deck[number_deck][number_suit][number_card]
         #print(random_card, number_suit)
         # 4 step - remove the card
-        print("====================")
-        print(random_card, number_suit)
-        print(number_deck, number_suit, number_card)
-        print(self.list_card_deck[number_deck])
-        print(self.list_card_deck[number_deck][number_suit])
+        #print("====================")
+        #print(random_card, number_suit)
+        #print(number_deck, number_suit, number_card)
+        ##print(self.list_card_deck[number_deck])
+        #print(self.list_card_deck[number_deck][number_suit])
         #self.list_card_deck[number_deck][number_suit].remove(self.suit[number_card])
         del(self.list_card_deck[number_deck][number_suit][number_card])
         return random_card, number_suit

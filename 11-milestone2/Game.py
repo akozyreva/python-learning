@@ -46,6 +46,7 @@ class Game(Cards):
         if self.counts >= 3:
             self.print_whole_game()
         Game.counts += 1
+        # exeucute check winner function
 
     def total_score(self, card_number, player):
         #print(card_number)
@@ -73,7 +74,8 @@ class Game(Cards):
         print("===================")
         print("Dealers Cards")
         for i in self.dealer_cards:
-            if self.counts <= 3:
+            # TODO - decide, when open card
+            if len(self.dealer_cards) == 1:
                 print("Hidden Card")
             print(i)
         print(f"Total score: {self.dealer_score}")
@@ -92,3 +94,7 @@ class Game(Cards):
         self.new_count('player')
         # mae one move as dealer
         self.new_count('dealer')
+
+
+    def hit(self, player):
+        self.new_count(player)
