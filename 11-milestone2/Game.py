@@ -49,7 +49,7 @@ class Game(Cards):
         # exeucute check winner function
 
     def total_score(self, card_number, player):
-        #print(card_number)
+        # print(card_number)
         if card_number == 'ace':
             if player == 'player':
                 if self.player_score + 11 <= 21:
@@ -64,7 +64,7 @@ class Game(Cards):
             pass
         else:
             if player == 'player':
-                #print(Game.count_dict[card_number])
+                # print(Game.count_dict[card_number])
                 self.player_score += int(Game.count_dict[card_number])
             else:
                 self.dealer_score += int(Game.count_dict[card_number])
@@ -94,7 +94,6 @@ class Game(Cards):
         self.new_count('player')
         # mae one move as dealer
         self.new_count('dealer')
-
 
     def hit(self, player):
         self.new_count(player)

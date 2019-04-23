@@ -31,20 +31,20 @@ class Cards:
         # 3 step - choose the card, depeneds on len of suit
         len_of_deck_suit = len(self.list_card_deck[number_deck][number_suit])
         number_card = random.randint(0, len_of_deck_suit - 1)
-        #print(number_deck, number_suit, number_card)
+        # print(number_deck, number_suit, number_card)
         random_card = self.list_card_deck[number_deck][number_suit][number_card]
-        #print(random_card, number_suit)
+        # print(random_card, number_suit)
         # 4 step - remove the card
-        #print("====================")
-        #print(random_card, number_suit)
-        #print(number_deck, number_suit, number_card)
-        ##print(self.list_card_deck[number_deck])
-        #print(self.list_card_deck[number_deck][number_suit])
-        #self.list_card_deck[number_deck][number_suit].remove(self.suit[number_card])
+        # print("====================")
+        # print(random_card, number_suit)
+        # print(number_deck, number_suit, number_card)
+        # print(self.list_card_deck[number_deck])
+        # print(self.list_card_deck[number_deck][number_suit])
+        # self.list_card_deck[number_deck][number_suit].remove(self.suit[number_card])
         del(self.list_card_deck[number_deck][number_suit][number_card])
         return random_card, number_suit
 
-#card = Cards()
-#card.cards_deck()
-#result = card.random_card()
-#print(result)
+# card = Cards()
+# card.cards_deck()
+# result = card.random_card()
+# print(result)

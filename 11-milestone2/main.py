@@ -1,10 +1,7 @@
 from Game import Game
-from Player import Player
-from Dealer import Dealer
+
 
 newGame = Game()
-player = Player()
-dealer = Dealer()
 newGame.initialize_game()
 game = 1
 while game:
@@ -12,7 +9,7 @@ while game:
         print("You won! Black Jack")
         game = 0
         break
-    move = int(input("Choose, what to do next - hit(1) or stand(2)?"))
+    move = int(input("Choose, what to do next - hit(1) or stand(2)? "))
     if move == 1:
         newGame.hit("player")
         if newGame.player_score == 21:
@@ -40,9 +37,4 @@ while game:
                 else:
                     print("Dealer lost")
                     dealer_turn = 0
-        #pass
         game = 0
-
-# but it doesn't work = I don't know why
-#Player.show_cards()
-    # next - move of dealer
