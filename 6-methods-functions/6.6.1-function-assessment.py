@@ -86,6 +86,7 @@ print(spy_game([1,7,2,0,4,5,0]) )
 # COUNT PRIMES: Write a function that returns the number of prime
 # numbers that exist up to and including a given number
 # count_primes(100) --> 25
+# 2 3 5 7 11 13 etc.
 # By convention, 0 and 1 are not prime.
 # I use algorithm  - Sieve of Eratosthenes
 def count_primes(num):
